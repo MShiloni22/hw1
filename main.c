@@ -17,7 +17,6 @@ int main()
     printf("choose two integers for bitAnd function:\n");
     scanf("%d%d", &x, &y);
     printf("result = %d\n", bitAnd(x, y)); */
-    printf("hello");
     int c, d;
     printf("choose two integers for getByte function:\n");
     scanf("%d%d", &c, &d);
