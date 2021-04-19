@@ -20,7 +20,7 @@ int main()
     int c, d;
     printf("choose two integers for getByte function:\n");
     scanf("%x%d", &c, &d);
-    printf("result = %X\n", getByte(c, d));
+    printf("result = %x\n", getByte(c, d));
     return 0;
 }
 
@@ -41,6 +41,7 @@ int bitAnd(int x, int y)
 
 int getByte(int x, int y)
 {
-    int mask = ((1 << 8) - 1) << (8*y);
+    int mask = ((1 << 8) - 1);
+    x = x >> (y << 3);
     return (x&mask);
 }
