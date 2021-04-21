@@ -1,36 +1,25 @@
 #include <stdio.h>
 
-void swap(int *a, int *b);
 int bitAnd(int x, int y);
 int getByte(int x, int y);
+int logicalShift(int x, int n);
 
 
 int main()
 {
-    /* int a, b;
-    printf("choose two integers for swap function:\n");
-    scanf("%d%d", &a, &b);
-    swap(&a, &b);
-    printf("a = %d\n", a);
-    printf("b = %d\n", b);
-    int x, y;
+    /* int x, y;
     printf("choose two integers for bitAnd function:\n");
     scanf("%d%d", &x, &y);
     printf("result = %d\n", bitAnd(x, y));
     int c, d;
-    printf("choose two integers for getByte function:\n");
+    printf("choose two integers for getByte function, first - integer, second - byte number:\n");
     scanf("%x%d", &c, &d);
-    printf("result = %x\n", getByte(c, d)); */
+    printf("result = %x\n", getByte(c, d));
+    int a, b;
+    printf("choose two integers for logicalShift function:\n");
+    scanf("%x%d", &a, &b);
+    printf("result = %x\n", getByte(a, b));*/
     return 0;
-}
-
-
-void swap(int *a, int *b)
-// without temp variable
-{
-    *a = *a^*b;
-    *b = *b^*a;
-    *a = *a^*b;
 }
 
 
@@ -57,4 +46,15 @@ int getByte(int x, int y)
     int mask = ((1 << 8) + ~0);
     x = x >> (y << 3);
     return (x&mask);
+}
+
+
+
+int logicalShift(int x, int n)
+{
+    x = x >> n;
+    unsigned mask = (1U<<n)+(~0);
+    mask = mask <<(32+(~n+1));
+    x = x & ~mask;
+    return x;
 }
