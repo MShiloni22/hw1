@@ -54,7 +54,7 @@ int getByte(int x, int y)
 * Max ops: 6
 */
 {
-    int mask = ((1 << 8) - 1);
+    int mask = ((1 << 8) + ~0);
     x = x >> (y << 3);
     return (x&mask);
 }
