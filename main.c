@@ -14,11 +14,11 @@ int main()
     int c, d;
     printf("choose two integers for getByte function, first - integer, second - byte number:\n");
     scanf("%x%d", &c, &d);
-    printf("result = %x\n", getByte(c, d)); */
+    printf("result = %x\n", getByte(c, d));
     int a, b;
     printf("choose two integers for logicalShift function:\n");
     scanf("%x%d", &a, &b);
-    printf("result = %x\n", getByte(a, b));
+    printf("result = %x\n", logicalShift(a, b)); */
     return 0;
 }
 
