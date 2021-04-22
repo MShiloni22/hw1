@@ -14,11 +14,11 @@ int main()
     int c, d;
     printf("choose two integers for getByte function, first - integer, second - byte number:\n");
     scanf("%x%d", &c, &d);
-    printf("result = %x\n", getByte(c, d));
+    printf("result = %x\n", getByte(c, d)); */
     int a, b;
     printf("choose two integers for logicalShift function:\n");
     scanf("%x%d", &a, &b);
-    printf("result = %x\n", getByte(a, b));*/
+    printf("result = %x\n", getByte(a, b));
     return 0;
 }
 
@@ -51,9 +51,16 @@ int getByte(int x, int y)
 
 
 int logicalShift(int x, int n)
+/*
+* logicalShift ‐ shift x to the right by n, using a logical shift
+* Can assume that 0 <= n <= 31
+* Examples: logicalShift(0x87654321,4) = 0x08765432
+* Legal ops: ! ~ & ^ | + << >>
+* Max ops: 20
+*/
 {
     x = x >> n;
-    unsigned mask = (1U<<n)+(~0);
+    int mask = (1<<n)+(~0);
     mask = mask <<(32+(~n+1));
     x = x & ~mask;
     return x;
